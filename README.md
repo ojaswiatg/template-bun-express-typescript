@@ -1,5 +1,5 @@
 # BET Stack - Bun Express Typescript
-
+Set the origin to your repository
 Uses bun as environment and package manager
 
 ## Features
@@ -28,5 +28,6 @@ Uses bun as environment and package manager
 ## Tips
 
 1. You can put some commonly used commands like build and release commands on a release.sh file and add a script to run in package.json file.
+2. Don't forget to set the origin to your repository!!!
 
 ### Happy Building!
