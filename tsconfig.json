@@ -22,6 +22,9 @@
             "#schemas": ["./src/schemas"],
             "#schemas/*": ["./src/schemas/*"],
 
+            "#stores": ["./src/stores"],
+            "#stores/*": ["./src/stores/*"],
+
             "#tools": ["./src/tools"],
             "#tools/*": ["./src/tools/*"],
 
