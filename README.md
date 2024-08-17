@@ -1,4 +1,5 @@
 # BET Stack - Bun Express Typescript
+
 Uses bun as environment and package manager.
 <br/>
 Set the origin to your repository.

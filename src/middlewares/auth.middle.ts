@@ -1,7 +1,7 @@
-import type { Request, Response, NextFunction } from "express";
+import type { NextFunction, Request, Response } from "express";
 
 import { hasUserSession } from "#helpers/auth.helpers";
-import { storeUserSession, deleteUserSession } from "#utils/auth.utils";
+import { deleteUserSession, storeUserSession } from "#utils/auth.utils";
 
 export async function isUserAuthenticated(
     req: Request,
