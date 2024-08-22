@@ -7,6 +7,12 @@ WORKDIR /app
 # Copy all the application code
 COPY . .
 
+# Copy the enironment variables
+COPY .env.production .env
+
+# Clean up
+RUN bun clean:all
+
 # Install dependencies
 RUN bun install
 
@@ -18,7 +24,6 @@ RUN rm -rf src
 
 # Set environment variables - PORT 8080 is necessary for Google App Engine
 ENV PORT=8080 
-ENV MONGO_URI=
 
 # Command to run your app
 CMD ["bun", "start"]
