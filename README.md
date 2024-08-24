@@ -22,9 +22,10 @@ Set the origin to your repository.
 2. Do a `bun install`
 3. Checkout the scripts in package.json.
 
-## Some useful guides
+## Read these before deploying your app to the Google App Engine
+You must have a valid Google Cloud Account with a project and a repository setup in Google Artifact Registry
 
-1. [Push your docker image to the Goolge Artifact Registery for deployment](https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling)
+1. [Push your docker image to the Goolge Artifact Registry for deployment](https://cloud.google.com/artifact-registry/docs/docker/pushing-and-pulling)
 2. [Deploy your app on Google App Engine](https://cloud.google.com/artifact-registry/docs/integrate-app-engine)
 
 ## Tips
