@@ -33,51 +33,70 @@ Set the origin to your repository.
 2. Don't forget to set the origin to your repository!!!
 
 ## How to build and deploy your app
+This is a guide to deploy your app to the Google App Engine.</br>
 Make sure you are logged in to your account in gcloud<br/><br/>
 1. Create a docker image
-```bash
-docker build -t <image_name> .
-```
+    ```bash
+    docker build -t <image_name> .
+    ```
 
 2. Test the docker image locally
-```bash
-docker run -p <host_port>:<port_specified_in_app> run <image_name>
-```
-> Now you can visit http://localhost<host_port> to see the app running.
+    ```bash
+    docker run -p <host_port>:<port_specified_in_app> run <image_name>
+    ```
+    Now you can visit http://localhost<host_port> to see the app running.
 
 3. Login to the gcloud cli
-```bash
-gcloud auth login
-```
+    ```bash
+    gcloud auth login
+    ```
 
 4. Select the correct project id
-```bash
-gcloud config set project <your_google_cloud_project_name>
-```
+    ```bash
+    gcloud config set project <your_google_cloud_project_id>
+    ```
 
 5. Authenticate to your repo
-```bash
-gcloud auth configure-docker <region_name>-docker.pkg.dev
-```
+    ```bash
+    gcloud auth configure-docker <region_name>-docker.pkg.dev
+    ```
 
 6. Tag the docker image
-```bash
-docker tag <image_name> <region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
-```
+    ```bash
+    docker tag <image_name> <region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
+    ```
 
 7. Push the docker image to the Google Artifact Registry
-```bash
-docker push <region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
-```
+    ```bash
+    docker push <region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
+    ```
 
 8. Deploy the image to the Google App Engine
-```bash
-gcloud app deploy --image-url=<region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
-```
+    ```bash
+    gcloud app deploy --image-url=<region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
+    ```
 
 9. Browse your app
-```bash
-gcloud app browse
-```
+    ```bash
+    gcloud app browse
+    ```
+
+### Don't forget to stop the running docker containers locally
+1. List all the running containers
+    ```bash
+    docker ps
+    ```
+2. Stop the container
+    ```bash
+    docker stop <container_id>
+    ```
+3. Wait and check again if the container stopped
+    ```bash
+    docker ps
+    ```
+5. If the container is unresponsive kill it
+   ```bash
+   docker kill <container_id>
+   ```
 
 ### Happy Building!
