@@ -81,7 +81,8 @@ Make sure you are logged in to your account in gcloud<br/><br/>
     gcloud app browse
     ```
 
-### Don't forget to stop the running docker containers locally
+#### <span style="color: red">Warning! Don't forget to stop the locally running docker container(s)</span>
+Follow the steps below:
 1. List all the running containers
     ```bash
     docker ps
