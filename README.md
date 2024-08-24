@@ -72,7 +72,7 @@ Make sure you are logged in to your account in gcloud<br/><br/>
     docker push <region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
     ```
 
-8. Deploy the image to the Google App Engine
+8. Deploy the image to the Google App Engine - read the instructions carefully and answer the prompts asked
     ```bash
     gcloud app deploy --image-url=<region_name>-docker.pkg.dev/<project_id>/<repository_name>/<image_name>:<tag>
     ```
